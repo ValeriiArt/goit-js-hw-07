@@ -31,10 +31,15 @@ galleryRef.addEventListener('click', clickOnImg);
 function clickOnImg(event) {
     event.preventDefault();
     const imageSource = event.target.dataset.source;
-    // console.log(imageSource);
-    const instance = basicLightbox.create(
-        `<img src="${imageSource}" width="800" height="600">`
-    );
-    instance.show();
+    const imgClassList = event.target.classList.value;
+    
+    if( imgClassList === "gallery__image"){
+        
+        const instance = basicLightbox.create(
+            `<img src="${imageSource}" width="800" height="600">`
+        );
+        instance.show();
+    }
+    
 }
 
